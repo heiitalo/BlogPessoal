@@ -16,6 +16,8 @@ import org.springframework.lang.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+
 @Entity
 @Table(name = "Postagem")
 
@@ -39,7 +41,11 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	public Tema tema;
-
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produtos")
+	public UsuarioModel usuario;
+	
 	public long getId() {
 		return id;
 	}
